@@ -83,12 +83,13 @@ p {
   top: 0;
   background: rgba(255, 255, 255, 0.96);
   border-bottom: 1px solid var(--line);
+  box-shadow: 0 12px 30px rgba(24, 39, 75, 0.08);
   backdrop-filter: blur(14px);
 }
 
 .header-inner {
   display: grid;
-  min-height: 78px;
+  min-height: 86px;
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 24px;
@@ -97,31 +98,15 @@ p {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  min-width: 190px;
+  width: 170px;
+  max-width: 42vw;
+  padding: 0;
 }
 
-.brand-mark {
-  display: grid;
-  width: 48px;
-  height: 48px;
-  place-items: center;
-  border-radius: var(--radius);
-  background: linear-gradient(135deg, var(--yellow), var(--lime));
-  color: #111;
-  font-weight: 950;
-}
-
-.brand strong,
-.brand small {
-  display: block;
-  line-height: 1.1;
-}
-
-.brand small {
-  margin-top: 4px;
-  color: var(--green);
-  font-weight: 800;
+.brand img {
+  width: 100%;
+  height: 76px;
+  object-fit: contain;
 }
 
 .site-nav {
@@ -148,7 +133,7 @@ p {
   justify-content: center;
   border-radius: var(--radius);
   padding: 10px 18px;
-  background: var(--orange);
+  background: var(--green);
   color: #fff;
   font-weight: 900;
   white-space: nowrap;
@@ -174,7 +159,7 @@ p {
 }
 
 .hero-media {
-  background-image: url("assets/hero-xe-ghep.jpg");
+  background-image: url("assets/vinfast-limo-green-ai.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -539,15 +524,38 @@ section {
 
 .fare-image {
   aspect-ratio: 16 / 10;
-  background:
-    linear-gradient(180deg, rgba(11, 122, 66, 0), rgba(11, 122, 66, 0.24)),
-    url("assets/hero-xe-ghep.jpg") center / cover;
+  background-position: center;
+  background-size: cover;
 }
 
-.fare-image.alt {
+.fare-thanh-hoa {
+  background:
+    linear-gradient(180deg, rgba(11, 122, 66, 0), rgba(11, 122, 66, 0.24)),
+    url("assets/fare-thanh-hoa.jpg") center / cover;
+}
+
+.fare-ha-nam {
   background:
     linear-gradient(180deg, rgba(240, 139, 36, 0), rgba(240, 139, 36, 0.22)),
-    url("assets/hero-xe-ghep.jpg") 68% center / cover;
+    url("assets/fare-ha-nam.jpg") center / cover;
+}
+
+.fare-nam-dinh {
+  background:
+    linear-gradient(180deg, rgba(11, 122, 66, 0), rgba(11, 122, 66, 0.2)),
+    url("assets/fare-nam-dinh.jpg") center / cover;
+}
+
+.fare-hai-phong {
+  background:
+    linear-gradient(180deg, rgba(0, 104, 255, 0), rgba(0, 104, 255, 0.18)),
+    url("assets/fare-hai-phong.jpg") center / cover;
+}
+
+.fare-theo-lich-trinh {
+  background:
+    linear-gradient(180deg, rgba(23, 32, 42, 0), rgba(23, 32, 42, 0.24)),
+    url("assets/fare-theo-lich-trinh.jpg") center / cover;
 }
 
 .fare-body {
@@ -761,7 +769,16 @@ section {
 }
 
 .footer-brand {
+  width: 280px;
+  max-width: 100%;
   margin-bottom: 18px;
+  padding: 10px;
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.footer-brand img {
+  height: auto;
 }
 
 .site-footer h3 {
@@ -831,7 +848,12 @@ section {
   }
 
   .site-header.nav-open .site-nav a {
+    color: var(--ink);
     padding: 11px 10px;
+  }
+
+  .site-header.nav-open .site-nav a:hover {
+    color: var(--green);
   }
 
   .hero-grid,
@@ -863,16 +885,16 @@ section {
   }
 
   .header-inner {
-    min-height: 68px;
+    min-height: 74px;
   }
 
   .brand {
-    min-width: 0;
+    width: 136px;
+    max-width: 58vw;
   }
 
-  .brand-mark {
-    width: 42px;
-    height: 42px;
+  .brand img {
+    height: 62px;
   }
 
   .hero {
