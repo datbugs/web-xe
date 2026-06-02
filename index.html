@@ -1,439 +1,499 @@
 <!doctype html>
 <html lang="vi">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Dịch vụ taxi ghép, tiện chuyến an toàn, nhanh chóng, tiện lợi. Đặt xe ghép liên tỉnh, xe tiện chuyến, xe hợp đồng và đưa đón sân bay qua hotline 0378.104.668 - 037.789.4821."
-    />
-    <title>Taxi Ghép Tiện Chuyến - An toàn, nhanh chóng, tiện lợi</title>
-    <link rel="preload" href="assets/vinfast-limo-green-ai.jpg" as="image" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="topbar">
-      <div class="container topbar-inner">
-        <p>Taxi ghép, tiện chuyến, xe hợp đồng liên tỉnh</p>
-        <p>Hotline: <a href="tel:0378104668">0378.104.668</a> - <a href="tel:0377894821">037.789.4821</a></p>
-      </div>
-    </div>
 
-    <header class="site-header" data-header>
-      <div class="container header-inner">
-        <a class="brand" href="#home" aria-label="Xe ghép nông công">
-          <img src="assets/logo-xeghepnongcong-header-transparent.png" alt="Xe ghép nông công" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Dịch vụ taxi ghép, tiện chuyến an toàn, nhanh chóng, tiện lợi. Đặt xe ghép liên tỉnh, xe tiện chuyến, xe hợp đồng và đưa đón sân bay qua hotline 0378.104.668 - 037.789.4821." />
+  <title>Taxi Ghép Tiện Chuyến - An toàn, nhanh chóng, tiện lợi</title>
+  <link rel="preload" href="assets/vinfast-limo-green-ai.jpg" as="image" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <p>Taxi ghép, tiện chuyến, xe hợp đồng liên tỉnh</p>
+      <p>Hotline: <a href="tel:0378104668">0378.104.668</a> - <a href="tel:0377894821">037.789.4821</a></p>
+    </div>
+  </div>
+
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="Xe ghép nông công">
+        <img src="assets/logo-xeghepnongcong-header-transparent.png" alt="Xe ghép nông công" />
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <a href="#home">Trang chủ</a>
+        <a href="#dich-vu">Dịch vụ</a>
+        <a href="#bang-gia">Bảng giá</a>
+        <a href="#quy-trinh">Quy trình</a>
+        <a href="#lien-he">Liên hệ</a>
+      </nav>
+      <a class="header-call" href="tel:0378104668">Gọi đặt xe</a>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-media" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Dịch vụ taxi ghép, tiện chuyến</p>
+          <h1>An toàn | Nhanh chóng | Tiện lợi</h1>
+          <p>
+            Đặt xe ghép liên tỉnh, xe tiện chuyến, đưa đón sân bay và xe hợp đồng
+            theo lịch trình riêng. Báo giá rõ ràng, xác nhận xe nhanh, đón đúng hẹn.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="tel:0378104668">Gọi 0378.104.668</a>
+            <a class="btn btn-light" href="tel:0377894821">Gọi 037.789.4821</a>
+          </div>
+        </div>
+
+        <form class="booking-card" name="dat-xe" data-quote-form>
+          <div class="form-title">
+            <strong>Đặt xe nhanh</strong>
+            <span>Nhập lịch trình rồi gửi qua SMS hoặc Zalo</span>
+          </div>
+          <label>
+            Họ tên
+            <input type="text" name="name" placeholder="Nhập họ tên" autocomplete="name" />
+          </label>
+          <label>
+            Số điện thoại
+            <input type="tel" name="phone" placeholder="Nhập số điện thoại" autocomplete="tel" />
+          </label>
+          <div class="form-row">
+            <label>
+              Điểm đón
+              <input type="text" name="pickup" placeholder="Ví dụ: Hà Nội" />
+            </label>
+            <label>
+              Điểm đến
+              <input type="text" name="dropoff" placeholder="Ví dụ: Hải Phòng" />
+            </label>
+          </div>
+          <label>
+            Thời gian / ghi chú
+            <textarea name="route" rows="3" placeholder="Ví dụ: 2 khách, đi 7:00 sáng, có 1 vali"></textarea>
+          </label>
+          <p class="form-status" data-form-status aria-live="polite"></p>
+          <div class="form-actions">
+            <button class="btn btn-form" type="submit">
+              <i data-lucide="message-circle" aria-hidden="true"></i>
+              <span>Gửi SMS</span>
+            </button>
+            <button class="btn btn-zalo" type="button" data-form-zalo>
+              <i data-lucide="copy" aria-hidden="true"></i>
+              <span>Zalo</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="price-section" id="bang-gia">
+      <div class="container">
+        <div class="section-head centered">
+          <p class="section-kicker">Bảng giá tham khảo</p>
+          <h2>Dịch vụ xe ghép Hà Nội đi các tỉnh</h2>
+          <p class="section-note">
+            Giá phụ thuộc điểm đón, giờ đi, số khách và tình trạng xe tiện chuyến.
+            Vui lòng gọi hotline để chốt giá chính xác trước khi khởi hành.
+          </p>
+        </div>
+
+        <div class="fare-grid">
+          <article class="fare-card" data-route="Hà Nội - TP. Thanh Hóa">
+            <div class="fare-image fare-thanh-hoa" aria-hidden="true"></div>
+            <div class="fare-body">
+              <h3>Gọi xe ghép Hà Nội đi TP Thanh Hóa 5 - 7 chỗ giá rẻ</h3>
+              <p class="fare-route">Hà Nội <span></span> TP. Thanh Hóa</p>
+              <div class="fare-list">
+                <div>
+                  <strong>1 ghế ghép</strong>
+                  <b>400.000đ</b>
+                  <div class="fare-actions"><a href="sms:0378104668" data-fare-sms data-type="1 ghế ghép"
+                      data-price="400.000đ"><i data-lucide="message-circle"
+                        aria-hidden="true"></i><span>SMS</span></a><a href="https://zalo.me/0378104668" data-fare-zalo
+                      data-type="1 ghế ghép" data-price="400.000đ"><i data-lucide="copy"
+                        aria-hidden="true"></i><span>Zalo</span></a></div>
+                </div>
+                <div>
+                  <strong>Xe 5 chỗ</strong>
+                  <b>1.200.000đ</b>
+                  <div class="fare-actions"><a href="sms:0378104668" data-fare-sms data-type="Xe 5 chỗ"
+                      data-price="1.200.000đ"><i data-lucide="message-circle"
+                        aria-hidden="true"></i><span>SMS</span></a><a href="https://zalo.me/0378104668" data-fare-zalo
+                      data-type="Xe 5 chỗ" data-price="1.200.000đ"><i data-lucide="copy"
+                        aria-hidden="true"></i><span>Zalo</span></a></div>
+                </div>
+                <div>
+                  <strong>Xe 7 chỗ</strong>
+                  <b>1.300.000đ</b>
+                  <div class="fare-actions"><a href="sms:0378104668" data-fare-sms data-type="Xe 7 chỗ"
+                      data-price="1.300.000đ"><i data-lucide="message-circle"
+                        aria-hidden="true"></i><span>SMS</span></a><a href="https://zalo.me/0378104668" data-fare-zalo
+                      data-type="Xe 7 chỗ" data-price="1.300.000đ"><i data-lucide="copy"
+                        aria-hidden="true"></i><span>Zalo</span></a></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="fare-card" data-route="Hà Nội - Hà Nam">
+            <div class="fare-image fare-ha-nam" aria-hidden="true"></div>
+            <div class="fare-body">
+              <h3>Gọi xe ghép Hà Nội đi Hà Nam 5 - 7 chỗ giá rẻ</h3>
+              <p class="fare-route">Hà Nội <span></span> Hà Nam</p>
+              <div class="fare-list">
+                <div>
+                  <strong>1 ghế ghép</strong>
+                  <b>200.000đ</b>
+                  <div class="fare-actions"><a href="sms:0378104668" data-fare-sms data-type="1 ghế ghép"
+                      data-price="200.000đ"><i data-lucide="message-circle"
+                        aria-hidden="true"></i><span>SMS</span></a><a href="https://zalo.me/0378104668" data-fare-zalo
+                      data-type="1 ghế ghép" data-price="200.000đ"><i data-lucide="copy"
+                        aria-hidden="true"></i><span>Zalo</span></a></div>
+                </div>
+                <div>
+                  <strong>Xe 5 chỗ</strong>
+                  <b>500.000đ</b>
+                  <div class="fare-actions"><a href="sms:0378104668" data-fare-sms data-type="Xe 5 chỗ"
+                      data-price="500.000đ"><i data-lucide="message-circle"
+                        aria-hidden="true"></i><span>SMS</span></a><a href="https://zalo.me/0378104668" data-fare-zalo
+                      data-type="Xe 5 chỗ" data-price="500.000đ"><i data-lucide="copy"
+                        aria-hidden="true"></i><span>Zalo</span></a></div>
+                </div>
+                <div>
+                  <strong>Xe 7 chỗ</strong>
+                  <b>600.000đ</b>
+                  <div class="fare-actions"><a href="sms:0378104668" data-fare-sms data-type="Xe 7 chỗ"
+                      data-price="600.000đ"><i data-lucide="message-circle"
+                        aria-hidden="true"></i><span>SMS</span></a><a href="https://zalo.me/0378104668" data-fare-zalo
+                      data-type="Xe 7 chỗ" data-price="600.000đ"><i data-lucide="copy"
+                        aria-hidden="true"></i><span>Zalo</span></a></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="fare-card" data-route="Hà Nội - Nam Định">
+            <div class="fare-image fare-nam-dinh" aria-hidden="true"></div>
+            <div class="fare-body">
+              <h3>Gọi xe ghép Hà Nội đi Nam Định 5 - 7 chỗ giá rẻ</h3>
+              <p class="fare-route">Hà Nội <span></span> Nam Định</p>
+              <div class="fare-list">
+                <div>
+                  <strong>1 ghế ghép</strong>
+                  <b>300.000đ</b>
+                  <div class="fare-actions"><a href="sms:0378104668" data-fare-sms data-type="1 ghế ghép"
+                      data-price="300.000đ"><i data-lucide="message-circle"
+                        aria-hidden="true"></i><span>SMS</span></a><a href="https://zalo.me/0378104668" data-fare-zalo
+                      data-type="1 ghế ghép" data-price="300.000đ"><i data-lucide="copy"
+                        aria-hidden="true"></i><span>Zalo</span></a></div>
+                </div>
+                <div>
+                  <strong>Xe 5 chỗ</strong>
+                  <b>1.200.000đ</b>
+                  <div class="fare-actions"><a href="sms:0378104668" data-fare-sms data-type="Xe 5 chỗ"
+                      data-price="1.200.000đ"><i data-lucide="message-circle"
+                        aria-hidden="true"></i><span>SMS</span></a><a href="https://zalo.me/0378104668" data-fare-zalo
+                      data-type="Xe 5 chỗ" data-price="1.200.000đ"><i data-lucide="copy"
+                        aria-hidden="true"></i><span>Zalo</span></a></div>
+                </div>
+                <div>
+                  <strong>Xe 7 chỗ</strong>
+                  <b>1.300.000đ</b>
+                  <div class="fare-actions"><a href="sms:0378104668" data-fare-sms data-type="Xe 7 chỗ"
+                      data-price="1.300.000đ"><i data-lucide="message-circle"
+                        aria-hidden="true"></i><span>SMS</span></a><a href="https://zalo.me/0378104668" data-fare-zalo
+                      data-type="Xe 7 chỗ" data-price="1.300.000đ"><i data-lucide="copy"
+                        aria-hidden="true"></i><span>Zalo</span></a></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="fare-card" data-route="Hà Nội - Hải Phòng">
+            <div class="fare-image fare-hai-phong" aria-hidden="true"></div>
+            <div class="fare-body">
+              <h3>Gọi xe ghép Hà Nội đi Hải Phòng 5 - 7 chỗ giá rẻ</h3>
+              <p class="fare-route">Hà Nội <span></span> Hải Phòng</p>
+              <div class="fare-list">
+                <div>
+                  <strong>1 ghế ghép</strong>
+                  <b>300.000đ</b>
+                  <div class="fare-actions"><a href="sms:0378104668" data-fare-sms data-type="1 ghế ghép"
+                      data-price="300.000đ"><i data-lucide="message-circle"
+                        aria-hidden="true"></i><span>SMS</span></a><a href="https://zalo.me/0378104668" data-fare-zalo
+                      data-type="1 ghế ghép" data-price="300.000đ"><i data-lucide="copy"
+                        aria-hidden="true"></i><span>Zalo</span></a></div>
+                </div>
+                <div>
+                  <strong>Xe 5 chỗ</strong>
+                  <b>1.200.000đ</b>
+                  <div class="fare-actions"><a href="sms:0378104668" data-fare-sms data-type="Xe 5 chỗ"
+                      data-price="1.200.000đ"><i data-lucide="message-circle"
+                        aria-hidden="true"></i><span>SMS</span></a><a href="https://zalo.me/0378104668" data-fare-zalo
+                      data-type="Xe 5 chỗ" data-price="1.200.000đ"><i data-lucide="copy"
+                        aria-hidden="true"></i><span>Zalo</span></a></div>
+                </div>
+                <div>
+                  <strong>Xe 7 chỗ</strong>
+                  <b>1.300.000đ</b>
+                  <div class="fare-actions"><a href="sms:0378104668" data-fare-sms data-type="Xe 7 chỗ"
+                      data-price="1.300.000đ"><i data-lucide="message-circle"
+                        aria-hidden="true"></i><span>SMS</span></a><a href="https://zalo.me/0378104668" data-fare-zalo
+                      data-type="Xe 7 chỗ" data-price="1.300.000đ"><i data-lucide="copy"
+                        aria-hidden="true"></i><span>Zalo</span></a></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="fare-card" data-route="Hà Nội - Theo lịch trình">
+            <div class="fare-image fare-theo-lich-trinh" aria-hidden="true"></div>
+            <div class="fare-body">
+              <h3>Gọi xe ghép Hà Nội đi các tỉnh theo yêu cầu</h3>
+              <p class="fare-route">Hà Nội <span></span> Theo lịch trình</p>
+              <div class="fare-list">
+                <div>
+                  <strong>1 ghế ghép</strong>
+                  <b>Liên hệ</b>
+                  <div class="fare-actions"><a href="sms:0378104668" data-fare-sms data-type="1 ghế ghép"
+                      data-price="Liên hệ"><i data-lucide="message-circle" aria-hidden="true"></i><span>SMS</span></a><a
+                      href="https://zalo.me/0378104668" data-fare-zalo data-type="1 ghế ghép" data-price="Liên hệ"><i
+                        data-lucide="copy" aria-hidden="true"></i><span>Zalo</span></a></div>
+                </div>
+                <div>
+                  <strong>Xe 5 chỗ</strong>
+                  <b>Báo giá</b>
+                  <div class="fare-actions"><a href="sms:0378104668" data-fare-sms data-type="Xe 5 chỗ"
+                      data-price="Báo giá"><i data-lucide="message-circle" aria-hidden="true"></i><span>SMS</span></a><a
+                      href="https://zalo.me/0378104668" data-fare-zalo data-type="Xe 5 chỗ" data-price="Báo giá"><i
+                        data-lucide="copy" aria-hidden="true"></i><span>Zalo</span></a></div>
+                </div>
+                <div>
+                  <strong>Xe 7 chỗ</strong>
+                  <b>Báo giá</b>
+                  <div class="fare-actions"><a href="sms:0378104668" data-fare-sms data-type="Xe 7 chỗ"
+                      data-price="Báo giá"><i data-lucide="message-circle" aria-hidden="true"></i><span>SMS</span></a><a
+                      href="https://zalo.me/0378104668" data-fare-zalo data-type="Xe 7 chỗ" data-price="Báo giá"><i
+                        data-lucide="copy" aria-hidden="true"></i><span>Zalo</span></a></div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick-strip">
+      <div class="container strip-grid">
+        <div>
+          <strong>24/7</strong>
+          <span>Nhận lịch linh hoạt</span>
+        </div>
+        <div>
+          <strong>Rõ giá</strong>
+          <span>Báo trước khi đi</span>
+        </div>
+        <div>
+          <strong>Đón tận nơi</strong>
+          <span>Phù hợp từng tuyến</span>
+        </div>
+        <div>
+          <strong>Xe sạch</strong>
+          <span>Đi xa thoải mái</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="dich-vu">
+      <div class="container">
+        <div class="section-head centered">
+          <p class="section-kicker">Dịch vụ nổi bật</p>
+          <h2>Lựa chọn chuyến xe phù hợp nhu cầu</h2>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-icon">01</div>
+            <h3>Xe ghép liên tỉnh</h3>
+            <p>Ghép khách cùng tuyến, tiết kiệm chi phí, phù hợp khách đi một mình hoặc nhóm nhỏ.</p>
+            <a href="tel:0378104668">Tư vấn tuyến</a>
+          </article>
+          <article class="service-card featured">
+            <div class="service-icon">02</div>
+            <h3>Xe tiện chuyến</h3>
+            <p>Tận dụng xe chiều về hoặc xe trống lịch để có giá tốt cho các chuyến đã xác định sẵn.</p>
+            <a href="tel:0378104668">Kiểm tra xe</a>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">03</div>
+            <h3>Đưa đón sân bay</h3>
+            <p>Canh giờ bay, hỗ trợ hành lý, phù hợp khách cá nhân, gia đình và đối tác công ty.</p>
+            <a href="tel:0377894821">Đặt lịch đón</a>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">04</div>
+            <h3>Xe hợp đồng</h3>
+            <p>Thuê xe riêng theo ngày, theo tuyến hoặc theo lịch trình công tác, du lịch, sự kiện.</p>
+            <a href="tel:0377894821">Nhận báo giá</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="packages">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Gói dịch vụ</p>
+            <h2>Phù hợp khách cá nhân và doanh nghiệp</h2>
+          </div>
+          <a class="btn btn-outline" href="tel:0378104668">Gọi tư vấn</a>
+        </div>
+        <div class="package-grid">
+          <article class="package-card">
+            <h3>Đi ghép tiết kiệm</h3>
+            <p>Dành cho khách muốn tối ưu chi phí và linh hoạt điểm đón trả theo tuyến.</p>
+            <ul>
+              <li>Ghép khách cùng chiều</li>
+              <li>Báo giờ đón trước</li>
+              <li>Chi phí hợp lý</li>
+            </ul>
+          </article>
+          <article class="package-card premium">
+            <h3>Tiện chuyến giá tốt</h3>
+            <p>Dành cho lịch trình rõ ràng, cần xe nhanh với mức giá tốt hơn xe riêng.</p>
+            <ul>
+              <li>Kiểm tra xe trống lịch</li>
+              <li>Phù hợp đi tỉnh trong ngày</li>
+              <li>Xác nhận tài xế nhanh</li>
+            </ul>
+          </article>
+          <article class="package-card">
+            <h3>Xe riêng hợp đồng</h3>
+            <p>Dành cho gia đình, công tác, sự kiện hoặc lịch trình nhiều điểm dừng.</p>
+            <ul>
+              <li>Chủ động thời gian</li>
+              <li>Không ghép khách lạ</li>
+              <li>Báo giá theo tuyến</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="quy-trinh">
+      <div class="container process-grid">
+        <div>
+          <p class="section-kicker">Quy trình đặt xe</p>
+          <h2>4 bước đơn giản để có chuyến đi phù hợp</h2>
+        </div>
+        <ol class="steps">
+          <li>
+            <span>1</span>
+            <strong>Gửi lịch trình</strong>
+            <p>Điểm đón, điểm đến, số khách, hành lý và giờ đi.</p>
+          </li>
+          <li>
+            <span>2</span>
+            <strong>Nhận phương án</strong>
+            <p>Gợi ý xe ghép, tiện chuyến hoặc xe riêng phù hợp.</p>
+          </li>
+          <li>
+            <span>3</span>
+            <strong>Chốt giá và xe</strong>
+            <p>Xác nhận tài xế, biển số, giờ đón và lưu ý chuyến đi.</p>
+          </li>
+          <li>
+            <span>4</span>
+            <strong>Khởi hành</strong>
+            <p>Đón đúng hẹn, hỗ trợ hành lý và cập nhật khi cần.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="reviews">
+      <div class="container">
+        <div class="section-head centered">
+          <p class="section-kicker">Khách hàng nói gì</p>
+          <h2>Dịch vụ rõ ràng, dễ đặt, đúng giờ</h2>
+        </div>
+        <div class="review-grid">
+          <article>
+            <p>“Mình đặt xe đi tỉnh trong ngày, tài xế gọi xác nhận trước và đến đúng giờ. Giá báo rõ ngay từ đầu.”</p>
+            <strong>Khách đi công tác</strong>
+          </article>
+          <article>
+            <p>“Gia đình có hành lý nhiều nên được tư vấn xe rộng. Chuyến đi êm, tài xế hỗ trợ nhiệt tình.”</p>
+            <strong>Khách gia đình</strong>
+          </article>
+          <article>
+            <p>“Cần xe tiện chuyến gấp, gọi hotline là có phương án nhanh. Rất tiện khi không muốn tự lái.”</p>
+            <strong>Khách đi sân bay</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="lien-he">
+      <div class="container contact-box">
+        <div>
+          <p class="section-kicker">Liên hệ đặt xe</p>
+          <h2>Cần xe hôm nay? Gọi ngay để được báo tuyến.</h2>
+        </div>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="tel:0378104668">0378.104.668</a>
+          <a class="btn btn-dark" href="tel:0377894821">037.789.4821</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand footer-brand" href="#home">
+          <img src="assets/logo-xeghepnongcong-wide.png" alt="Xe ghép nông công" />
         </a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <nav class="site-nav" id="site-nav">
-          <a href="#home">Trang chủ</a>
-          <a href="#dich-vu">Dịch vụ</a>
-          <a href="#bang-gia">Bảng giá</a>
-          <a href="#quy-trinh">Quy trình</a>
-          <a href="#lien-he">Liên hệ</a>
-        </nav>
-        <a class="header-call" href="tel:0378104668">Gọi đặt xe</a>
+        <p>Dịch vụ taxi ghép, tiện chuyến, xe hợp đồng liên tỉnh. An toàn, nhanh chóng, tiện lợi.</p>
       </div>
-    </header>
-
-    <main id="home">
-      <section class="hero">
-        <div class="hero-media" aria-hidden="true"></div>
-        <div class="hero-overlay" aria-hidden="true"></div>
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">Dịch vụ taxi ghép, tiện chuyến</p>
-            <h1>An toàn | Nhanh chóng | Tiện lợi</h1>
-            <p>
-              Đặt xe ghép liên tỉnh, xe tiện chuyến, đưa đón sân bay và xe hợp đồng
-              theo lịch trình riêng. Báo giá rõ ràng, xác nhận xe nhanh, đón đúng hẹn.
-            </p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="tel:0378104668">Gọi 0378.104.668</a>
-              <a class="btn btn-light" href="tel:0377894821">Gọi 037.789.4821</a>
-            </div>
-          </div>
-
-          <form class="booking-card" name="dat-xe" data-quote-form>
-            <div class="form-title">
-              <strong>Đặt xe nhanh</strong>
-              <span>Nhập lịch trình rồi gửi qua SMS hoặc Zalo</span>
-            </div>
-            <label>
-              Họ tên
-              <input type="text" name="name" placeholder="Nhập họ tên" autocomplete="name" />
-            </label>
-            <label>
-              Số điện thoại
-              <input type="tel" name="phone" placeholder="Nhập số điện thoại" autocomplete="tel" />
-            </label>
-            <div class="form-row">
-              <label>
-                Điểm đón
-                <input type="text" name="pickup" placeholder="Ví dụ: Hà Nội" />
-              </label>
-              <label>
-                Điểm đến
-                <input type="text" name="dropoff" placeholder="Ví dụ: Hải Phòng" />
-              </label>
-            </div>
-            <label>
-              Thời gian / ghi chú
-              <textarea name="route" rows="3" placeholder="Ví dụ: 2 khách, đi 7:00 sáng, có 1 vali"></textarea>
-            </label>
-            <p class="form-status" data-form-status aria-live="polite"></p>
-            <div class="form-actions">
-              <button class="btn btn-form" type="submit">
-                <i data-lucide="message-circle" aria-hidden="true"></i>
-                <span>Gửi SMS</span>
-              </button>
-              <button class="btn btn-zalo" type="button" data-form-zalo>
-                <i data-lucide="copy" aria-hidden="true"></i>
-                <span>Zalo</span>
-              </button>
-            </div>
-          </form>
-        </div>
-      </section>
-
-      <section class="quick-strip">
-        <div class="container strip-grid">
-          <div>
-            <strong>24/7</strong>
-            <span>Nhận lịch linh hoạt</span>
-          </div>
-          <div>
-            <strong>Rõ giá</strong>
-            <span>Báo trước khi đi</span>
-          </div>
-          <div>
-            <strong>Đón tận nơi</strong>
-            <span>Phù hợp từng tuyến</span>
-          </div>
-          <div>
-            <strong>Xe sạch</strong>
-            <span>Đi xa thoải mái</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="services" id="dich-vu">
-        <div class="container">
-          <div class="section-head centered">
-            <p class="section-kicker">Dịch vụ nổi bật</p>
-            <h2>Lựa chọn chuyến xe phù hợp nhu cầu</h2>
-          </div>
-          <div class="service-grid">
-            <article class="service-card">
-              <div class="service-icon">01</div>
-              <h3>Xe ghép liên tỉnh</h3>
-              <p>Ghép khách cùng tuyến, tiết kiệm chi phí, phù hợp khách đi một mình hoặc nhóm nhỏ.</p>
-              <a href="tel:0378104668">Tư vấn tuyến</a>
-            </article>
-            <article class="service-card featured">
-              <div class="service-icon">02</div>
-              <h3>Xe tiện chuyến</h3>
-              <p>Tận dụng xe chiều về hoặc xe trống lịch để có giá tốt cho các chuyến đã xác định sẵn.</p>
-              <a href="tel:0378104668">Kiểm tra xe</a>
-            </article>
-            <article class="service-card">
-              <div class="service-icon">03</div>
-              <h3>Đưa đón sân bay</h3>
-              <p>Canh giờ bay, hỗ trợ hành lý, phù hợp khách cá nhân, gia đình và đối tác công ty.</p>
-              <a href="tel:0377894821">Đặt lịch đón</a>
-            </article>
-            <article class="service-card">
-              <div class="service-icon">04</div>
-              <h3>Xe hợp đồng</h3>
-              <p>Thuê xe riêng theo ngày, theo tuyến hoặc theo lịch trình công tác, du lịch, sự kiện.</p>
-              <a href="tel:0377894821">Nhận báo giá</a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="price-section" id="bang-gia">
-        <div class="container">
-          <div class="section-head centered">
-            <p class="section-kicker">Bảng giá tham khảo</p>
-            <h2>Dịch vụ xe ghép Hà Nội đi các tỉnh</h2>
-            <p class="section-note">
-              Giá phụ thuộc điểm đón, giờ đi, số khách và tình trạng xe tiện chuyến.
-              Vui lòng gọi hotline để chốt giá chính xác trước khi khởi hành.
-            </p>
-          </div>
-
-          <div class="fare-grid">
-            <article class="fare-card" data-route="Hà Nội - TP. Thanh Hóa">
-              <div class="fare-image fare-thanh-hoa" aria-hidden="true"></div>
-              <div class="fare-body">
-                <h3>Gọi xe ghép Hà Nội đi TP Thanh Hóa 5 - 7 chỗ giá rẻ</h3>
-                <p class="fare-route">Hà Nội <span></span> TP. Thanh Hóa</p>
-                <div class="fare-list">
-                  <div>
-                    <strong>1 ghế ghép</strong>
-                    <b>400.000đ</b>
-                    <div class="fare-actions"><a href="sms:0378104668" data-fare-sms data-type="1 ghế ghép" data-price="400.000đ"><i data-lucide="message-circle" aria-hidden="true"></i><span>SMS</span></a><a href="https://zalo.me/0378104668" data-fare-zalo data-type="1 ghế ghép" data-price="400.000đ"><i data-lucide="copy" aria-hidden="true"></i><span>Zalo</span></a></div>
-                  </div>
-                  <div>
-                    <strong>Xe 5 chỗ</strong>
-                    <b>1.200.000đ</b>
-                    <div class="fare-actions"><a href="sms:0378104668" data-fare-sms data-type="Xe 5 chỗ" data-price="1.200.000đ"><i data-lucide="message-circle" aria-hidden="true"></i><span>SMS</span></a><a href="https://zalo.me/0378104668" data-fare-zalo data-type="Xe 5 chỗ" data-price="1.200.000đ"><i data-lucide="copy" aria-hidden="true"></i><span>Zalo</span></a></div>
-                  </div>
-                  <div>
-                    <strong>Xe 7 chỗ</strong>
-                    <b>1.300.000đ</b>
-                    <div class="fare-actions"><a href="sms:0378104668" data-fare-sms data-type="Xe 7 chỗ" data-price="1.300.000đ"><i data-lucide="message-circle" aria-hidden="true"></i><span>SMS</span></a><a href="https://zalo.me/0378104668" data-fare-zalo data-type="Xe 7 chỗ" data-price="1.300.000đ"><i data-lucide="copy" aria-hidden="true"></i><span>Zalo</span></a></div>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="fare-card" data-route="Hà Nội - Hà Nam">
-              <div class="fare-image fare-ha-nam" aria-hidden="true"></div>
-              <div class="fare-body">
-                <h3>Gọi xe ghép Hà Nội đi Hà Nam 5 - 7 chỗ giá rẻ</h3>
-                <p class="fare-route">Hà Nội <span></span> Hà Nam</p>
-                <div class="fare-list">
-                  <div>
-                    <strong>1 ghế ghép</strong>
-                    <b>200.000đ</b>
-                    <div class="fare-actions"><a href="sms:0378104668" data-fare-sms data-type="1 ghế ghép" data-price="200.000đ"><i data-lucide="message-circle" aria-hidden="true"></i><span>SMS</span></a><a href="https://zalo.me/0378104668" data-fare-zalo data-type="1 ghế ghép" data-price="200.000đ"><i data-lucide="copy" aria-hidden="true"></i><span>Zalo</span></a></div>
-                  </div>
-                  <div>
-                    <strong>Xe 5 chỗ</strong>
-                    <b>500.000đ</b>
-                    <div class="fare-actions"><a href="sms:0378104668" data-fare-sms data-type="Xe 5 chỗ" data-price="500.000đ"><i data-lucide="message-circle" aria-hidden="true"></i><span>SMS</span></a><a href="https://zalo.me/0378104668" data-fare-zalo data-type="Xe 5 chỗ" data-price="500.000đ"><i data-lucide="copy" aria-hidden="true"></i><span>Zalo</span></a></div>
-                  </div>
-                  <div>
-                    <strong>Xe 7 chỗ</strong>
-                    <b>600.000đ</b>
-                    <div class="fare-actions"><a href="sms:0378104668" data-fare-sms data-type="Xe 7 chỗ" data-price="600.000đ"><i data-lucide="message-circle" aria-hidden="true"></i><span>SMS</span></a><a href="https://zalo.me/0378104668" data-fare-zalo data-type="Xe 7 chỗ" data-price="600.000đ"><i data-lucide="copy" aria-hidden="true"></i><span>Zalo</span></a></div>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="fare-card" data-route="Hà Nội - Nam Định">
-              <div class="fare-image fare-nam-dinh" aria-hidden="true"></div>
-              <div class="fare-body">
-                <h3>Gọi xe ghép Hà Nội đi Nam Định 5 - 7 chỗ giá rẻ</h3>
-                <p class="fare-route">Hà Nội <span></span> Nam Định</p>
-                <div class="fare-list">
-                  <div>
-                    <strong>1 ghế ghép</strong>
-                    <b>300.000đ</b>
-                    <div class="fare-actions"><a href="sms:0378104668" data-fare-sms data-type="1 ghế ghép" data-price="300.000đ"><i data-lucide="message-circle" aria-hidden="true"></i><span>SMS</span></a><a href="https://zalo.me/0378104668" data-fare-zalo data-type="1 ghế ghép" data-price="300.000đ"><i data-lucide="copy" aria-hidden="true"></i><span>Zalo</span></a></div>
-                  </div>
-                  <div>
-                    <strong>Xe 5 chỗ</strong>
-                    <b>1.200.000đ</b>
-                    <div class="fare-actions"><a href="sms:0378104668" data-fare-sms data-type="Xe 5 chỗ" data-price="1.200.000đ"><i data-lucide="message-circle" aria-hidden="true"></i><span>SMS</span></a><a href="https://zalo.me/0378104668" data-fare-zalo data-type="Xe 5 chỗ" data-price="1.200.000đ"><i data-lucide="copy" aria-hidden="true"></i><span>Zalo</span></a></div>
-                  </div>
-                  <div>
-                    <strong>Xe 7 chỗ</strong>
-                    <b>1.300.000đ</b>
-                    <div class="fare-actions"><a href="sms:0378104668" data-fare-sms data-type="Xe 7 chỗ" data-price="1.300.000đ"><i data-lucide="message-circle" aria-hidden="true"></i><span>SMS</span></a><a href="https://zalo.me/0378104668" data-fare-zalo data-type="Xe 7 chỗ" data-price="1.300.000đ"><i data-lucide="copy" aria-hidden="true"></i><span>Zalo</span></a></div>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="fare-card" data-route="Hà Nội - Hải Phòng">
-              <div class="fare-image fare-hai-phong" aria-hidden="true"></div>
-              <div class="fare-body">
-                <h3>Gọi xe ghép Hà Nội đi Hải Phòng 5 - 7 chỗ giá rẻ</h3>
-                <p class="fare-route">Hà Nội <span></span> Hải Phòng</p>
-                <div class="fare-list">
-                  <div>
-                    <strong>1 ghế ghép</strong>
-                    <b>300.000đ</b>
-                    <div class="fare-actions"><a href="sms:0378104668" data-fare-sms data-type="1 ghế ghép" data-price="300.000đ"><i data-lucide="message-circle" aria-hidden="true"></i><span>SMS</span></a><a href="https://zalo.me/0378104668" data-fare-zalo data-type="1 ghế ghép" data-price="300.000đ"><i data-lucide="copy" aria-hidden="true"></i><span>Zalo</span></a></div>
-                  </div>
-                  <div>
-                    <strong>Xe 5 chỗ</strong>
-                    <b>1.200.000đ</b>
-                    <div class="fare-actions"><a href="sms:0378104668" data-fare-sms data-type="Xe 5 chỗ" data-price="1.200.000đ"><i data-lucide="message-circle" aria-hidden="true"></i><span>SMS</span></a><a href="https://zalo.me/0378104668" data-fare-zalo data-type="Xe 5 chỗ" data-price="1.200.000đ"><i data-lucide="copy" aria-hidden="true"></i><span>Zalo</span></a></div>
-                  </div>
-                  <div>
-                    <strong>Xe 7 chỗ</strong>
-                    <b>1.300.000đ</b>
-                    <div class="fare-actions"><a href="sms:0378104668" data-fare-sms data-type="Xe 7 chỗ" data-price="1.300.000đ"><i data-lucide="message-circle" aria-hidden="true"></i><span>SMS</span></a><a href="https://zalo.me/0378104668" data-fare-zalo data-type="Xe 7 chỗ" data-price="1.300.000đ"><i data-lucide="copy" aria-hidden="true"></i><span>Zalo</span></a></div>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="fare-card" data-route="Hà Nội - Theo lịch trình">
-              <div class="fare-image fare-theo-lich-trinh" aria-hidden="true"></div>
-              <div class="fare-body">
-                <h3>Gọi xe ghép Hà Nội đi các tỉnh theo yêu cầu</h3>
-                <p class="fare-route">Hà Nội <span></span> Theo lịch trình</p>
-                <div class="fare-list">
-                  <div>
-                    <strong>1 ghế ghép</strong>
-                    <b>Liên hệ</b>
-                    <div class="fare-actions"><a href="sms:0378104668" data-fare-sms data-type="1 ghế ghép" data-price="Liên hệ"><i data-lucide="message-circle" aria-hidden="true"></i><span>SMS</span></a><a href="https://zalo.me/0378104668" data-fare-zalo data-type="1 ghế ghép" data-price="Liên hệ"><i data-lucide="copy" aria-hidden="true"></i><span>Zalo</span></a></div>
-                  </div>
-                  <div>
-                    <strong>Xe 5 chỗ</strong>
-                    <b>Báo giá</b>
-                    <div class="fare-actions"><a href="sms:0378104668" data-fare-sms data-type="Xe 5 chỗ" data-price="Báo giá"><i data-lucide="message-circle" aria-hidden="true"></i><span>SMS</span></a><a href="https://zalo.me/0378104668" data-fare-zalo data-type="Xe 5 chỗ" data-price="Báo giá"><i data-lucide="copy" aria-hidden="true"></i><span>Zalo</span></a></div>
-                  </div>
-                  <div>
-                    <strong>Xe 7 chỗ</strong>
-                    <b>Báo giá</b>
-                    <div class="fare-actions"><a href="sms:0378104668" data-fare-sms data-type="Xe 7 chỗ" data-price="Báo giá"><i data-lucide="message-circle" aria-hidden="true"></i><span>SMS</span></a><a href="https://zalo.me/0378104668" data-fare-zalo data-type="Xe 7 chỗ" data-price="Báo giá"><i data-lucide="copy" aria-hidden="true"></i><span>Zalo</span></a></div>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="packages">
-        <div class="container">
-          <div class="section-head">
-            <div>
-              <p class="section-kicker">Gói dịch vụ</p>
-              <h2>Phù hợp khách cá nhân và doanh nghiệp</h2>
-            </div>
-            <a class="btn btn-outline" href="tel:0378104668">Gọi tư vấn</a>
-          </div>
-          <div class="package-grid">
-            <article class="package-card">
-              <h3>Đi ghép tiết kiệm</h3>
-              <p>Dành cho khách muốn tối ưu chi phí và linh hoạt điểm đón trả theo tuyến.</p>
-              <ul>
-                <li>Ghép khách cùng chiều</li>
-                <li>Báo giờ đón trước</li>
-                <li>Chi phí hợp lý</li>
-              </ul>
-            </article>
-            <article class="package-card premium">
-              <h3>Tiện chuyến giá tốt</h3>
-              <p>Dành cho lịch trình rõ ràng, cần xe nhanh với mức giá tốt hơn xe riêng.</p>
-              <ul>
-                <li>Kiểm tra xe trống lịch</li>
-                <li>Phù hợp đi tỉnh trong ngày</li>
-                <li>Xác nhận tài xế nhanh</li>
-              </ul>
-            </article>
-            <article class="package-card">
-              <h3>Xe riêng hợp đồng</h3>
-              <p>Dành cho gia đình, công tác, sự kiện hoặc lịch trình nhiều điểm dừng.</p>
-              <ul>
-                <li>Chủ động thời gian</li>
-                <li>Không ghép khách lạ</li>
-                <li>Báo giá theo tuyến</li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="process" id="quy-trinh">
-        <div class="container process-grid">
-          <div>
-            <p class="section-kicker">Quy trình đặt xe</p>
-            <h2>4 bước đơn giản để có chuyến đi phù hợp</h2>
-          </div>
-          <ol class="steps">
-            <li>
-              <span>1</span>
-              <strong>Gửi lịch trình</strong>
-              <p>Điểm đón, điểm đến, số khách, hành lý và giờ đi.</p>
-            </li>
-            <li>
-              <span>2</span>
-              <strong>Nhận phương án</strong>
-              <p>Gợi ý xe ghép, tiện chuyến hoặc xe riêng phù hợp.</p>
-            </li>
-            <li>
-              <span>3</span>
-              <strong>Chốt giá và xe</strong>
-              <p>Xác nhận tài xế, biển số, giờ đón và lưu ý chuyến đi.</p>
-            </li>
-            <li>
-              <span>4</span>
-              <strong>Khởi hành</strong>
-              <p>Đón đúng hẹn, hỗ trợ hành lý và cập nhật khi cần.</p>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="reviews">
-        <div class="container">
-          <div class="section-head centered">
-            <p class="section-kicker">Khách hàng nói gì</p>
-            <h2>Dịch vụ rõ ràng, dễ đặt, đúng giờ</h2>
-          </div>
-          <div class="review-grid">
-            <article>
-              <p>“Mình đặt xe đi tỉnh trong ngày, tài xế gọi xác nhận trước và đến đúng giờ. Giá báo rõ ngay từ đầu.”</p>
-              <strong>Khách đi công tác</strong>
-            </article>
-            <article>
-              <p>“Gia đình có hành lý nhiều nên được tư vấn xe rộng. Chuyến đi êm, tài xế hỗ trợ nhiệt tình.”</p>
-              <strong>Khách gia đình</strong>
-            </article>
-            <article>
-              <p>“Cần xe tiện chuyến gấp, gọi hotline là có phương án nhanh. Rất tiện khi không muốn tự lái.”</p>
-              <strong>Khách đi sân bay</strong>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="contact" id="lien-he">
-        <div class="container contact-box">
-          <div>
-            <p class="section-kicker">Liên hệ đặt xe</p>
-            <h2>Cần xe hôm nay? Gọi ngay để được báo tuyến.</h2>
-          </div>
-          <div class="contact-actions">
-            <a class="btn btn-primary" href="tel:0378104668">0378.104.668</a>
-            <a class="btn btn-dark" href="tel:0377894821">037.789.4821</a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <div>
-          <a class="brand footer-brand" href="#home">
-            <img src="assets/logo-xeghepnongcong-wide.png" alt="Xe ghép nông công" />
-          </a>
-          <p>Dịch vụ taxi ghép, tiện chuyến, xe hợp đồng liên tỉnh. An toàn, nhanh chóng, tiện lợi.</p>
-        </div>
-        <div>
-          <h3>Dịch vụ</h3>
-          <a href="#dich-vu">Xe ghép liên tỉnh</a>
-          <a href="#dich-vu">Xe tiện chuyến</a>
-          <a href="#dich-vu">Đưa đón sân bay</a>
-          <a href="#dich-vu">Xe hợp đồng</a>
-        </div>
-        <div>
-          <h3>Hotline</h3>
-          <a href="tel:0378104668">0378.104.668</a>
-          <a href="tel:0377894821">037.789.4821</a>
-        </div>
+      <div>
+        <h3>Dịch vụ</h3>
+        <a href="#dich-vu">Xe ghép liên tỉnh</a>
+        <a href="#dich-vu">Xe tiện chuyến</a>
+        <a href="#dich-vu">Đưa đón sân bay</a>
+        <a href="#dich-vu">Xe hợp đồng</a>
       </div>
-    </footer>
-
-    <div class="mobile-cta" aria-label="Liên hệ nhanh">
-      <a href="tel:0378104668">Gọi ngay</a>
-      <a href="sms:0377894821">Nhắn tin</a>
+      <div>
+        <h3>Hotline</h3>
+        <a href="tel:0378104668">0378.104.668</a>
+        <a href="tel:0377894821">037.789.4821</a>
+      </div>
     </div>
+  </footer>
 
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="script.js"></script>
-  </body>
+  <div class="mobile-cta" aria-label="Liên hệ nhanh">
+    <a href="tel:0378104668">Gọi ngay</a>
+    <a href="sms:0377894821">Nhắn tin</a>
+  </div>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>
