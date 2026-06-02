@@ -3,7 +3,6 @@ const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelectorAll(".site-nav a");
 const quoteForm = document.querySelector("[data-quote-form]");
 const formZaloButton = document.querySelector("[data-form-zalo]");
-const copyMessageButton = document.querySelector("[data-copy-message]");
 const formStatus = document.querySelector("[data-form-status]");
 const fareSmsLinks = document.querySelectorAll("[data-fare-sms]");
 const fareZaloLinks = document.querySelectorAll("[data-fare-zalo]");
@@ -14,26 +13,30 @@ const syncHeader = () => {
   header.classList.toggle("is-scrolled", window.scrollY > 12);
 };
 
+if (window.lucide) {
+  window.lucide.createIcons();
+}
+
 const buildQuoteMessage = () => {
   const data = new FormData(quoteForm);
   return [
-    "Yeu cau bao gia taxi ghep:",
-    `Ho ten: ${data.get("name") || "Chua cung cap"}`,
-    `So dien thoai: ${data.get("phone") || "Chua cung cap"}`,
-    `Diem don: ${data.get("pickup") || "Chua cung cap"}`,
-    `Diem den: ${data.get("dropoff") || "Chua cung cap"}`,
-    `Ghi chu: ${data.get("route") || "Khong co"}`,
+    "Yêu cầu báo giá taxi ghép:",
+    `Họ tên: ${data.get("name") || "Chưa cung cấp"}`,
+    `Số điện thoại: ${data.get("phone") || "Chưa cung cấp"}`,
+    `Điểm đón: ${data.get("pickup") || "Chưa cung cấp"}`,
+    `Điểm đến: ${data.get("dropoff") || "Chưa cung cấp"}`,
+    `Ghi chú: ${data.get("route") || "Không có"}`,
   ].join("\n");
 };
 
 const buildFareMessage = (link) => {
   const card = link.closest("[data-route]");
   return [
-    "Toi muon dat xe taxi ghep:",
-    `Tuyen: ${card.dataset.route}`,
-    `Loai: ${link.dataset.type}`,
-    `Gia tham khao: ${link.dataset.price}`,
-    "Vui long tu van va xac nhan giup toi.",
+    "Tôi muốn đặt xe taxi ghép:",
+    `Tuyến: ${card.dataset.route}`,
+    `Loại: ${link.dataset.type}`,
+    `Giá tham khảo: ${link.dataset.price}`,
+    "Vui lòng tư vấn và xác nhận giúp tôi.",
   ].join("\n");
 };
 
@@ -63,10 +66,10 @@ const openZalo = async (message) => {
   try {
     await copyText(message);
     formStatus.className = "form-status is-success";
-    formStatus.textContent = "Đã sao chép nội dung. Đang mở Zalo, hãy dán nội dung vào khung chat.";
+    formStatus.textContent = "Zalo không tự điền tin nhắn. Nội dung đã được sao chép, hãy dán vào khung chat Zalo.";
   } catch (error) {
     formStatus.className = "form-status is-error";
-    formStatus.textContent = "Không sao chép được nội dung. Zalo vẫn sẽ được mở.";
+    formStatus.textContent = "Zalo không tự điền tin nhắn. Không sao chép được nội dung, vui lòng nhập thủ công.";
   }
 
   window.open(zaloUrl, "_blank", "noopener");
@@ -96,17 +99,6 @@ quoteForm.addEventListener("submit", (event) => {
 
 formZaloButton.addEventListener("click", () => {
   openZalo(buildQuoteMessage());
-});
-
-copyMessageButton.addEventListener("click", async () => {
-  try {
-    await copyText(buildQuoteMessage());
-    formStatus.className = "form-status is-success";
-    formStatus.textContent = "Đã sao chép nội dung. Bạn có thể dán vào Zalo, SMS hoặc email.";
-  } catch (error) {
-    formStatus.className = "form-status is-error";
-    formStatus.textContent = "Không sao chép được. Vui lòng thử lại hoặc gọi hotline.";
-  }
 });
 
 fareSmsLinks.forEach((link) => {

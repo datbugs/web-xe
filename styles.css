@@ -236,6 +236,7 @@ p {
   min-height: 48px;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   border: 1px solid transparent;
   border-radius: var(--radius);
   padding: 12px 18px;
@@ -245,6 +246,14 @@ p {
     transform 160ms ease,
     box-shadow 160ms ease,
     background 160ms ease;
+}
+
+.btn svg,
+.fare-actions svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  stroke-width: 2.4;
 }
 
 .btn:hover {
@@ -362,10 +371,6 @@ p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
-}
-
-.form-actions .btn-message {
-  grid-column: 1 / -1;
 }
 
 .btn:disabled {
@@ -604,14 +609,17 @@ section {
 }
 
 .fare-actions a {
-  display: grid;
+  display: inline-flex;
   min-height: 38px;
-  place-items: center;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
   border: 1px solid transparent;
   border-radius: var(--radius);
   padding: 8px 10px;
   font: inherit;
   font-weight: 950;
+  white-space: nowrap;
 }
 
 .fare-actions a {
