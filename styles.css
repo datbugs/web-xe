@@ -452,16 +452,6 @@ section {
   padding: 24px;
 }
 
-.service-card.featured {
-  color: #fff;
-  background: linear-gradient(145deg, var(--green), var(--green-dark));
-}
-
-.service-card.featured p,
-.service-card.featured a {
-  color: rgba(255, 255, 255, 0.84);
-}
-
 .service-icon {
   display: grid;
   width: 46px;
@@ -471,11 +461,6 @@ section {
   background: rgba(11, 122, 66, 0.1);
   color: var(--green);
   font-weight: 950;
-}
-
-.featured .service-icon {
-  background: var(--yellow);
-  color: #111;
 }
 
 .service-card h3,
