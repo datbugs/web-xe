@@ -563,10 +563,32 @@ section {
   font-weight: 900;
 }
 
-.fare-route span {
-  width: 28px;
-  height: 2px;
-  background: var(--orange);
+.fare-route [data-route-from],
+.fare-route [data-route-to] {
+  min-width: 0;
+}
+
+.fare-route button {
+  display: inline-grid;
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid rgba(240, 139, 36, 0.32);
+  border-radius: 999px;
+  background: #fff8e8;
+  color: var(--orange);
+  cursor: pointer;
+}
+
+.fare-route button:hover {
+  border-color: var(--orange);
+  background: #fff0cf;
+}
+
+.fare-route button svg {
+  width: 16px;
+  height: 16px;
 }
 
 .fare-list {

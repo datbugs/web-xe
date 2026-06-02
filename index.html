@@ -7,6 +7,23 @@
   <meta name="description"
     content="Dịch vụ taxi ghép, tiện chuyến an toàn, nhanh chóng, tiện lợi. Đặt xe ghép liên tỉnh, xe tiện chuyến, xe hợp đồng và đưa đón sân bay qua hotline 0378.104.668 - 037.789.4821." />
   <title>Taxi Ghép Tiện Chuyến - An toàn, nhanh chóng, tiện lợi</title>
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://xeghepnongcong.vercel.app/" />
+  <meta property="og:title" content="Xe Ghép Nông Cống - Taxi ghép, tiện chuyến" />
+  <meta property="og:description"
+    content="Dịch vụ taxi ghép, tiện chuyến an toàn, nhanh chóng, tiện lợi. Đặt xe liên tỉnh qua hotline 0378.104.668 - 037.789.4821." />
+  <meta property="og:image" content="https://xeghepnongcong.vercel.app/assets/vinfast-limo-green-ai.jpg" />
+  <meta property="og:image:width" content="1672" />
+  <meta property="og:image:height" content="941" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Xe Ghép Nông Cống - Taxi ghép, tiện chuyến" />
+  <meta name="twitter:description"
+    content="Dịch vụ taxi ghép, tiện chuyến an toàn, nhanh chóng, tiện lợi. Đặt xe liên tỉnh qua hotline 0378.104.668 - 037.789.4821." />
+  <meta name="twitter:image" content="https://xeghepnongcong.vercel.app/assets/vinfast-limo-green-ai.jpg" />
+  <meta name="theme-color" content="#0b7a42" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png" />
   <link rel="preload" href="assets/vinfast-limo-green-ai.jpg" as="image" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -104,19 +121,24 @@
       <div class="container">
         <div class="section-head centered">
           <p class="section-kicker">Bảng giá tham khảo</p>
-          <h2>Dịch vụ xe ghép Hà Nội đi các tỉnh</h2>
+          <h2 data-fare-heading>Dịch vụ xe ghép Hà Nội đi các tuyến</h2>
           <p class="section-note">
             Giá phụ thuộc điểm đón, giờ đi, số khách và tình trạng xe tiện chuyến.
             Vui lòng gọi hotline để chốt giá chính xác trước khi khởi hành.
           </p>
         </div>
-
         <div class="fare-grid">
-          <article class="fare-card" data-route="Hà Nội - TP. Thanh Hóa">
+          <article class="fare-card" data-route="Hà Nội - TP. Thanh Hóa" data-destination="TP. Thanh Hóa">
             <div class="fare-image fare-thanh-hoa" aria-hidden="true"></div>
             <div class="fare-body">
               <h3>Gọi xe ghép Hà Nội đi TP Thanh Hóa 5 - 7 chỗ giá rẻ</h3>
-              <p class="fare-route">Hà Nội <span></span> TP. Thanh Hóa</p>
+              <p class="fare-route">
+                <span data-route-from>Hà Nội</span>
+                <button type="button" data-card-fare-toggle aria-label="Đổi chiều tuyến">
+                  <i data-lucide="repeat-2" aria-hidden="true"></i>
+                </button>
+                <span data-route-to>TP. Thanh Hóa</span>
+              </p>
               <div class="fare-list">
                 <div>
                   <strong>1 ghế ghép</strong>
@@ -149,11 +171,17 @@
             </div>
           </article>
 
-          <article class="fare-card" data-route="Hà Nội - Hà Nam">
+          <article class="fare-card" data-route="Hà Nội - Hà Nam" data-destination="Hà Nam">
             <div class="fare-image fare-ha-nam" aria-hidden="true"></div>
             <div class="fare-body">
               <h3>Gọi xe ghép Hà Nội đi Hà Nam 5 - 7 chỗ giá rẻ</h3>
-              <p class="fare-route">Hà Nội <span></span> Hà Nam</p>
+              <p class="fare-route">
+                <span data-route-from>Hà Nội</span>
+                <button type="button" data-card-fare-toggle aria-label="Đổi chiều tuyến">
+                  <i data-lucide="repeat-2" aria-hidden="true"></i>
+                </button>
+                <span data-route-to>Hà Nam</span>
+              </p>
               <div class="fare-list">
                 <div>
                   <strong>1 ghế ghép</strong>
@@ -186,11 +214,17 @@
             </div>
           </article>
 
-          <article class="fare-card" data-route="Hà Nội - Nam Định">
+          <article class="fare-card" data-route="Hà Nội - Nam Định" data-destination="Nam Định">
             <div class="fare-image fare-nam-dinh" aria-hidden="true"></div>
             <div class="fare-body">
               <h3>Gọi xe ghép Hà Nội đi Nam Định 5 - 7 chỗ giá rẻ</h3>
-              <p class="fare-route">Hà Nội <span></span> Nam Định</p>
+              <p class="fare-route">
+                <span data-route-from>Hà Nội</span>
+                <button type="button" data-card-fare-toggle aria-label="Đổi chiều tuyến">
+                  <i data-lucide="repeat-2" aria-hidden="true"></i>
+                </button>
+                <span data-route-to>Nam Định</span>
+              </p>
               <div class="fare-list">
                 <div>
                   <strong>1 ghế ghép</strong>
@@ -223,11 +257,17 @@
             </div>
           </article>
 
-          <article class="fare-card" data-route="Hà Nội - Hải Phòng">
+          <article class="fare-card" data-route="Hà Nội - Hải Phòng" data-destination="Hải Phòng">
             <div class="fare-image fare-hai-phong" aria-hidden="true"></div>
             <div class="fare-body">
               <h3>Gọi xe ghép Hà Nội đi Hải Phòng 5 - 7 chỗ giá rẻ</h3>
-              <p class="fare-route">Hà Nội <span></span> Hải Phòng</p>
+              <p class="fare-route">
+                <span data-route-from>Hà Nội</span>
+                <button type="button" data-card-fare-toggle aria-label="Đổi chiều tuyến">
+                  <i data-lucide="repeat-2" aria-hidden="true"></i>
+                </button>
+                <span data-route-to>Hải Phòng</span>
+              </p>
               <div class="fare-list">
                 <div>
                   <strong>1 ghế ghép</strong>
@@ -260,11 +300,17 @@
             </div>
           </article>
 
-          <article class="fare-card" data-route="Hà Nội - Theo lịch trình">
+          <article class="fare-card" data-route="Hà Nội - Theo lịch trình" data-destination="Theo lịch trình">
             <div class="fare-image fare-theo-lich-trinh" aria-hidden="true"></div>
             <div class="fare-body">
               <h3>Gọi xe ghép Hà Nội đi các tỉnh theo yêu cầu</h3>
-              <p class="fare-route">Hà Nội <span></span> Theo lịch trình</p>
+              <p class="fare-route">
+                <span data-route-from>Hà Nội</span>
+                <button type="button" data-card-fare-toggle aria-label="Đổi chiều tuyến">
+                  <i data-lucide="repeat-2" aria-hidden="true"></i>
+                </button>
+                <span data-route-to>Theo lịch trình</span>
+              </p>
               <div class="fare-list">
                 <div>
                   <strong>1 ghế ghép</strong>

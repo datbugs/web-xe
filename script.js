@@ -6,6 +6,8 @@ const formZaloButton = document.querySelector("[data-form-zalo]");
 const formStatus = document.querySelector("[data-form-status]");
 const fareSmsLinks = document.querySelectorAll("[data-fare-sms]");
 const fareZaloLinks = document.querySelectorAll("[data-fare-zalo]");
+const cardFareToggles = document.querySelectorAll("[data-card-fare-toggle]");
+const fareCards = document.querySelectorAll(".fare-card[data-destination]");
 const hotline = "0378104668";
 const zaloUrl = `https://zalo.me/${hotline}`;
 
@@ -38,6 +40,36 @@ const buildFareMessage = (link) => {
     `Giá tham khảo: ${link.dataset.price}`,
     "Vui lòng tư vấn và xác nhận giúp tôi.",
   ].join("\n");
+};
+
+const updateFareCardDirection = (card, direction) => {
+  const isFromHanoi = direction === "from-hanoi";
+  const destination = card.dataset.destination;
+  const title = card.querySelector("h3");
+  const fromLabel = card.querySelector("[data-route-from]");
+  const toLabel = card.querySelector("[data-route-to]");
+  const isCustomRoute = destination === "Theo lịch trình";
+
+  const from = isFromHanoi ? "Hà Nội" : destination;
+  const to = isFromHanoi ? destination : "Hà Nội";
+  card.dataset.route = `${from} - ${to}`;
+  card.dataset.fareDirection = direction;
+
+  if (fromLabel) fromLabel.textContent = from;
+  if (toLabel) toLabel.textContent = to;
+
+  if (!title) return;
+
+  if (isCustomRoute) {
+    title.textContent = isFromHanoi
+      ? "Gọi xe ghép Hà Nội đi các tỉnh theo yêu cầu"
+      : "Gọi xe ghép các tỉnh về Hà Nội theo yêu cầu";
+    return;
+  }
+
+  title.textContent = isFromHanoi
+    ? `Gọi xe ghép Hà Nội đi ${destination} 5 - 7 chỗ giá rẻ`
+    : `Gọi xe ghép ${destination} về Hà Nội 5 - 7 chỗ giá rẻ`;
 };
 
 const openSms = (message) => {
@@ -99,6 +131,20 @@ quoteForm.addEventListener("submit", (event) => {
 
 formZaloButton.addEventListener("click", () => {
   openZalo(buildQuoteMessage());
+});
+
+fareCards.forEach((card) => {
+  updateFareCardDirection(card, "from-hanoi");
+});
+
+cardFareToggles.forEach((button) => {
+  button.addEventListener("click", () => {
+    const card = button.closest(".fare-card[data-destination]");
+    if (!card) return;
+    const nextDirection =
+      card.dataset.fareDirection === "to-hanoi" ? "from-hanoi" : "to-hanoi";
+    updateFareCardDirection(card, nextDirection);
+  });
 });
 
 fareSmsLinks.forEach((link) => {
