@@ -461,7 +461,7 @@ section {
 .section-head {
   display: flex;
   justify-content: space-between;
-  gap: 28px;
+  gap: 34px;
   align-items: end;
   margin-bottom: 30px;
 }
@@ -1013,6 +1013,11 @@ section {
 
   .section-head {
     display: block;
+  }
+
+  .section-head .btn {
+    width: fit-content;
+    margin-top: 18px;
   }
 
   .contact-box {
