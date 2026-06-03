@@ -75,6 +75,10 @@
           <div class="hero-actions">
             <a class="btn btn-primary" href="tel:0378104668">Gọi 0378.104.668</a>
             <a class="btn btn-light" href="tel:0377894821">Gọi 037.789.4821</a>
+            <button class="btn btn-light" type="button" data-delivery-open>
+              <i data-lucide="package-check" aria-hidden="true"></i>
+              <span>Gửi hàng</span>
+            </button>
           </div>
         </div>
 
@@ -539,6 +543,65 @@
   <div class="mobile-cta" aria-label="Liên hệ nhanh">
     <a href="tel:0378104668">Gọi ngay</a>
     <a href="sms:0377894821">Nhắn tin</a>
+  </div>
+
+  <div class="modal-backdrop" data-delivery-modal aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="delivery-title">
+      <button class="modal-close" type="button" data-delivery-close aria-label="Đóng form giao hàng">
+        <i data-lucide="x" aria-hidden="true"></i>
+      </button>
+      <form class="booking-card delivery-form" name="giao-hang" data-delivery-form>
+        <div class="form-title">
+          <strong id="delivery-title">Gửi hàng nhanh</strong>
+          <span>Nhập thông tin đơn hàng rồi gửi qua SMS hoặc Zalo</span>
+        </div>
+        <div class="form-row">
+          <label>
+            Người gửi
+            <input type="text" name="sender" placeholder="Tên người gửi" autocomplete="name" />
+          </label>
+          <label>
+            SĐT người gửi
+            <input type="tel" name="senderPhone" placeholder="Số điện thoại" autocomplete="tel" />
+          </label>
+        </div>
+        <div class="form-row">
+          <label>
+            Người nhận
+            <input type="text" name="receiver" placeholder="Tên người nhận" />
+          </label>
+          <label>
+            SĐT người nhận
+            <input type="tel" name="receiverPhone" placeholder="Số điện thoại" />
+          </label>
+        </div>
+        <div class="form-row">
+          <label>
+            Điểm lấy hàng
+            <input type="text" name="pickup" placeholder="Ví dụ: Hà Nội" />
+          </label>
+          <label>
+            Điểm giao hàng
+            <input type="text" name="dropoff" placeholder="Ví dụ: Thanh Hóa" />
+          </label>
+        </div>
+        <label>
+          Loại hàng / ghi chú
+          <textarea name="note" rows="3" placeholder="Ví dụ: 1 thùng nhỏ, cần giao trong ngày, hàng dễ vỡ"></textarea>
+        </label>
+        <p class="form-status" data-delivery-status aria-live="polite"></p>
+        <div class="form-actions">
+          <button class="btn btn-form" type="submit">
+            <i data-lucide="message-circle" aria-hidden="true"></i>
+            <span>Gửi SMS</span>
+          </button>
+          <button class="btn btn-zalo" type="button" data-delivery-zalo>
+            <i data-lucide="copy" aria-hidden="true"></i>
+            <span>Zalo</span>
+          </button>
+        </div>
+      </form>
+    </div>
   </div>
 
   <script src="https://unpkg.com/lucide@latest"></script>

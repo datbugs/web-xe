@@ -4,6 +4,12 @@ const navLinks = document.querySelectorAll(".site-nav a");
 const quoteForm = document.querySelector("[data-quote-form]");
 const formZaloButton = document.querySelector("[data-form-zalo]");
 const formStatus = document.querySelector("[data-form-status]");
+const deliveryOpenButton = document.querySelector("[data-delivery-open]");
+const deliveryModal = document.querySelector("[data-delivery-modal]");
+const deliveryCloseButton = document.querySelector("[data-delivery-close]");
+const deliveryForm = document.querySelector("[data-delivery-form]");
+const deliveryZaloButton = document.querySelector("[data-delivery-zalo]");
+const deliveryStatus = document.querySelector("[data-delivery-status]");
 const fareSmsLinks = document.querySelectorAll("[data-fare-sms]");
 const fareZaloLinks = document.querySelectorAll("[data-fare-zalo]");
 const cardFareToggles = document.querySelectorAll("[data-card-fare-toggle]");
@@ -28,6 +34,21 @@ const buildQuoteMessage = () => {
     `Điểm đón: ${data.get("pickup") || "Chưa cung cấp"}`,
     `Điểm đến: ${data.get("dropoff") || "Chưa cung cấp"}`,
     `Ghi chú: ${data.get("route") || "Không có"}`,
+  ].join("\n");
+};
+
+const buildDeliveryMessage = () => {
+  const data = new FormData(deliveryForm);
+  return [
+    "Yêu cầu giao hàng:",
+    `Người gửi: ${data.get("sender") || "Chưa cung cấp"}`,
+    `SĐT người gửi: ${data.get("senderPhone") || "Chưa cung cấp"}`,
+    `Người nhận: ${data.get("receiver") || "Chưa cung cấp"}`,
+    `SĐT người nhận: ${data.get("receiverPhone") || "Chưa cung cấp"}`,
+    `Điểm lấy hàng: ${data.get("pickup") || "Chưa cung cấp"}`,
+    `Điểm giao hàng: ${data.get("dropoff") || "Chưa cung cấp"}`,
+    `Loại hàng / ghi chú: ${data.get("note") || "Không có"}`,
+    "Vui lòng tư vấn phí gửi hàng và thời gian giao giúp tôi.",
   ].join("\n");
 };
 
@@ -94,17 +115,33 @@ const copyText = async (text) => {
   return copied;
 };
 
-const openZalo = async (message) => {
+const openZalo = async (message, statusElement = formStatus) => {
   try {
     await copyText(message);
-    formStatus.className = "form-status is-success";
-    formStatus.textContent = "Zalo không tự điền tin nhắn. Nội dung đã được sao chép, hãy dán vào khung chat Zalo.";
+    statusElement.className = "form-status is-success";
+    statusElement.textContent =
+      "Zalo không tự điền tin nhắn. Nội dung đã được sao chép, hãy dán vào khung chat Zalo.";
   } catch (error) {
-    formStatus.className = "form-status is-error";
-    formStatus.textContent = "Zalo không tự điền tin nhắn. Không sao chép được nội dung, vui lòng nhập thủ công.";
+    statusElement.className = "form-status is-error";
+    statusElement.textContent =
+      "Zalo không tự điền tin nhắn. Không sao chép được nội dung, vui lòng nhập thủ công.";
   }
 
   window.open(zaloUrl, "_blank", "noopener");
+};
+
+const openDeliveryModal = () => {
+  deliveryModal.classList.add("is-open");
+  deliveryModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("modal-open");
+  deliveryForm.querySelector("input, textarea")?.focus();
+};
+
+const closeDeliveryModal = () => {
+  deliveryModal.classList.remove("is-open");
+  deliveryModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
+  deliveryOpenButton?.focus();
 };
 
 syncHeader();
@@ -131,6 +168,32 @@ quoteForm.addEventListener("submit", (event) => {
 
 formZaloButton.addEventListener("click", () => {
   openZalo(buildQuoteMessage());
+});
+
+deliveryOpenButton?.addEventListener("click", openDeliveryModal);
+deliveryCloseButton?.addEventListener("click", closeDeliveryModal);
+
+deliveryModal?.addEventListener("click", (event) => {
+  if (event.target === deliveryModal) {
+    closeDeliveryModal();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && deliveryModal?.classList.contains("is-open")) {
+    closeDeliveryModal();
+  }
+});
+
+deliveryForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  deliveryStatus.className = "form-status is-success";
+  deliveryStatus.textContent = "Đang mở SMS với nội dung giao hàng đã điền sẵn.";
+  openSms(buildDeliveryMessage());
+});
+
+deliveryZaloButton?.addEventListener("click", () => {
+  openZalo(buildDeliveryMessage(), deliveryStatus);
 });
 
 fareCards.forEach((card) => {

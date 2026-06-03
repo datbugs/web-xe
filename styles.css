@@ -358,6 +358,59 @@ p {
   gap: 10px;
 }
 
+.modal-backdrop {
+  position: fixed;
+  z-index: 60;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  background: rgba(23, 32, 42, 0.58);
+  backdrop-filter: blur(10px);
+}
+
+.modal-backdrop.is-open {
+  display: flex;
+}
+
+.modal-panel {
+  position: relative;
+  width: min(720px, 100%);
+  max-height: min(92vh, 860px);
+  overflow: auto;
+}
+
+.modal-close {
+  position: absolute;
+  z-index: 2;
+  top: 12px;
+  right: 12px;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(24, 39, 75, 0.12);
+}
+
+.modal-close svg {
+  width: 18px;
+  height: 18px;
+}
+
+.delivery-form {
+  padding-top: 30px;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
 .btn:disabled {
   cursor: progress;
   opacity: 0.68;
