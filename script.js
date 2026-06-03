@@ -10,6 +10,11 @@ const deliveryCloseButton = document.querySelector("[data-delivery-close]");
 const deliveryForm = document.querySelector("[data-delivery-form]");
 const deliveryZaloButton = document.querySelector("[data-delivery-zalo]");
 const deliveryStatus = document.querySelector("[data-delivery-status]");
+const reviewForm = document.querySelector("[data-review-form]");
+const reviewStatus = document.querySelector("[data-review-status]");
+const reviewGrid = document.querySelector(".review-grid");
+const ratingInput = document.querySelector("[data-rating-value]");
+const ratingStars = document.querySelectorAll("[data-rating-star]");
 const fareSmsLinks = document.querySelectorAll("[data-fare-sms]");
 const fareZaloLinks = document.querySelectorAll("[data-fare-zalo]");
 const cardFareToggles = document.querySelectorAll("[data-card-fare-toggle]");
@@ -144,6 +149,16 @@ const closeDeliveryModal = () => {
   deliveryOpenButton?.focus();
 };
 
+const setRating = (rating) => {
+  if (ratingInput) {
+    ratingInput.value = String(rating);
+  }
+
+  ratingStars.forEach((button) => {
+    button.classList.toggle("is-active", Number(button.dataset.ratingStar) <= rating);
+  });
+};
+
 syncHeader();
 window.addEventListener("scroll", syncHeader, { passive: true });
 
@@ -194,6 +209,36 @@ deliveryForm?.addEventListener("submit", (event) => {
 
 deliveryZaloButton?.addEventListener("click", () => {
   openZalo(buildDeliveryMessage(), deliveryStatus);
+});
+
+ratingStars.forEach((button) => {
+  button.addEventListener("click", () => {
+    setRating(Number(button.dataset.ratingStar));
+  });
+});
+
+reviewForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const data = new FormData(reviewForm);
+  const rating = data.get("rating") || "5";
+  const name = String(data.get("name") || "").trim() || "Khách hàng";
+  const content = String(data.get("content") || "").trim();
+
+  if (!content) {
+    reviewStatus.className = "form-status is-error";
+    reviewStatus.textContent = "Vui lòng nhập nội dung đánh giá.";
+    return;
+  }
+
+  const article = document.createElement("article");
+  const stars = "★".repeat(Number(rating)) + "☆".repeat(5 - Number(rating));
+  article.innerHTML = `<p>“${content}”</p><strong>${stars} - ${name}</strong>`;
+  reviewGrid?.prepend(article);
+
+  reviewStatus.className = "form-status is-success";
+  reviewStatus.textContent = "Cảm ơn bạn đã gửi đánh giá.";
+  reviewForm.reset();
+  setRating(5);
 });
 
 fareCards.forEach((card) => {

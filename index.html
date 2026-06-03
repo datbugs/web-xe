@@ -489,17 +489,46 @@
         <div class="review-grid">
           <article>
             <p>“Mình đặt xe đi tỉnh trong ngày, tài xế gọi xác nhận trước và đến đúng giờ. Giá báo rõ ngay từ đầu.”</p>
-            <strong>Khách đi công tác</strong>
+            <strong>★★★★★ - Anh Minh</strong>
           </article>
           <article>
             <p>“Gia đình có hành lý nhiều nên được tư vấn xe rộng. Chuyến đi êm, tài xế hỗ trợ nhiệt tình.”</p>
-            <strong>Khách gia đình</strong>
+            <strong>★★★★★ - Chị Hương</strong>
           </article>
           <article>
             <p>“Cần xe tiện chuyến gấp, gọi hotline là có phương án nhanh. Rất tiện khi không muốn tự lái.”</p>
-            <strong>Khách đi sân bay</strong>
+            <strong>★★★★★ - Anh Tuấn</strong>
           </article>
         </div>
+        <form class="review-form" data-review-form>
+          <div class="form-title">
+            <strong>Gửi đánh giá của bạn</strong>
+          </div>
+          <label>
+            Tên của bạn
+            <input type="text" name="name" placeholder="Ví dụ: Anh Minh" autocomplete="name" />
+          </label>
+          <fieldset class="rating-field">
+            <legend>Chọn số sao</legend>
+            <input type="hidden" name="rating" value="5" data-rating-value />
+            <div class="star-picker" data-star-picker aria-label="Chọn số sao">
+              <button type="button" class="is-active" data-rating-star="1" aria-label="Chọn 1 sao">★</button>
+              <button type="button" class="is-active" data-rating-star="2" aria-label="Chọn 2 sao">★</button>
+              <button type="button" class="is-active" data-rating-star="3" aria-label="Chọn 3 sao">★</button>
+              <button type="button" class="is-active" data-rating-star="4" aria-label="Chọn 4 sao">★</button>
+              <button type="button" class="is-active" data-rating-star="5" aria-label="Chọn 5 sao">★</button>
+            </div>
+          </fieldset>
+          <label>
+            Nội dung đánh giá
+            <textarea name="content" rows="3" placeholder="Ví dụ: Xe sạch, tài xế đúng giờ, tư vấn rõ ràng"></textarea>
+          </label>
+          <p class="form-status" data-review-status aria-live="polite"></p>
+          <button class="btn btn-form" type="submit">
+            <i data-lucide="send" aria-hidden="true"></i>
+            <span>Gửi đánh giá</span>
+          </button>
+        </form>
       </div>
     </section>
 
