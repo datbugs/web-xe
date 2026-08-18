@@ -69,15 +69,15 @@ const buildFareMessage = (link) => {
 };
 
 const updateFareCardDirection = (card, direction) => {
-  const isFromHanoi = direction === "from-hanoi";
+  const isFromThanhHoa = direction === "from-thanh-hoa";
   const destination = card.dataset.destination;
   const title = card.querySelector("h3");
   const fromLabel = card.querySelector("[data-route-from]");
   const toLabel = card.querySelector("[data-route-to]");
   const isCustomRoute = destination === "Theo lịch trình";
 
-  const from = isFromHanoi ? "Hà Nội" : destination;
-  const to = isFromHanoi ? destination : "Hà Nội";
+  const from = isFromThanhHoa ? "Thanh Hóa" : destination;
+  const to = isFromThanhHoa ? destination : "Thanh Hóa";
   card.dataset.route = `${from} - ${to}`;
   card.dataset.fareDirection = direction;
 
@@ -87,15 +87,15 @@ const updateFareCardDirection = (card, direction) => {
   if (!title) return;
 
   if (isCustomRoute) {
-    title.textContent = isFromHanoi
-      ? "Gọi xe ghép Hà Nội đi các tỉnh theo yêu cầu"
-      : "Gọi xe ghép các tỉnh về Hà Nội theo yêu cầu";
+    title.textContent = isFromThanhHoa
+      ? "Gọi xe ghép Thanh Hóa đi các tỉnh theo yêu cầu"
+      : "Gọi xe ghép các tỉnh về Thanh Hóa theo yêu cầu";
     return;
   }
 
-  title.textContent = isFromHanoi
-    ? `Gọi xe ghép Hà Nội đi ${destination} 5 - 7 chỗ giá rẻ`
-    : `Gọi xe ghép ${destination} về Hà Nội 5 - 7 chỗ giá rẻ`;
+  title.textContent = isFromThanhHoa
+    ? `Gọi xe ghép Thanh Hóa đi ${destination} 5 - 7 chỗ giá rẻ`
+    : `Gọi xe ghép ${destination} về Thanh Hóa 5 - 7 chỗ giá rẻ`;
 };
 
 const openSms = (message) => {
@@ -242,7 +242,7 @@ reviewForm?.addEventListener("submit", (event) => {
 });
 
 fareCards.forEach((card) => {
-  updateFareCardDirection(card, "from-hanoi");
+  updateFareCardDirection(card, "from-thanh-hoa");
 });
 
 cardFareToggles.forEach((button) => {
@@ -250,7 +250,7 @@ cardFareToggles.forEach((button) => {
     const card = button.closest(".fare-card[data-destination]");
     if (!card) return;
     const nextDirection =
-      card.dataset.fareDirection === "to-hanoi" ? "from-hanoi" : "to-hanoi";
+      card.dataset.fareDirection === "to-thanh-hoa" ? "from-thanh-hoa" : "to-thanh-hoa";
     updateFareCardDirection(card, nextDirection);
   });
 });
