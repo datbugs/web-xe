@@ -32,7 +32,20 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png" />
   <link rel="preload" href="assets/vinfast-limo-green-ai.jpg" as="image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" />
   <link rel="stylesheet" href="styles.css" />
+  <script>
+    // Ẩn sẵn các phần tử sẽ animate (tránh nháy). Tự gỡ nếu thư viện không tải được.
+    if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.documentElement.classList.add("has-motion");
+      setTimeout(function () {
+        if (!window.__motionReady) document.documentElement.classList.remove("has-motion");
+      }, 3500);
+    }
+  </script>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -81,6 +94,7 @@
 </head>
 
 <body>
+  <div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
   <div class="topbar">
     <div class="container topbar-inner">
       <p>Taxi ghép, tiện chuyến, xe hợp đồng liên tỉnh</p>
@@ -105,34 +119,51 @@
         <a href="#quy-trinh">Quy trình</a>
         <a href="#lien-he">Liên hệ</a>
       </nav>
-      <a class="header-call" href="tel:0378104668">Gọi đặt xe</a>
+      <a class="header-call" href="tel:0378104668">
+        <i data-lucide="phone-call" aria-hidden="true"></i>
+        <span>Gọi đặt xe</span>
+      </a>
     </div>
   </header>
 
   <main id="home">
-    <section class="hero">
-      <div class="hero-media" aria-hidden="true"></div>
+    <section class="hero" data-section="home">
+      <div class="hero-media" aria-hidden="true" data-hero-media></div>
       <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-1" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-2" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Nhà Xe Hạnh Phúc - Xe ghép Nông Cống, Thanh Hóa, Hà Nội</p>
-          <h1>Taxi ghép Thanh Hóa Hà Nội an toàn, nhanh chóng</h1>
-          <p>
+          <p class="eyebrow" data-hero><span class="eyebrow-dot" aria-hidden="true"></span>Nhà Xe Hạnh Phúc - Xe ghép
+            Nông Cống, Thanh Hóa, Hà Nội</p>
+          <h1 data-hero>Taxi ghép Thanh Hóa Hà Nội <span class="text-gradient">an toàn, nhanh chóng</span></h1>
+          <p data-hero>
             Đặt xe ghép Thanh Hóa đi Hà Nội, Hà Nam, Nam Định, Hải Phòng, xe tiện chuyến,
             xe hợp đồng và gửi hàng nhanh 200k. Báo giá rõ ràng, xác nhận xe nhanh,
             đón đúng hẹn.
           </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="tel:0378104668">Gọi 0378.104.668</a>
-            <a class="btn btn-light" href="tel:0377894821">Gọi 037.789.4821</a>
+          <div class="hero-actions" data-hero>
+            <a class="btn btn-primary" href="tel:0378104668">
+              <i data-lucide="phone" aria-hidden="true"></i>
+              <span>Gọi 0378.104.668</span>
+            </a>
+            <a class="btn btn-light" href="tel:0377894821">
+              <i data-lucide="phone" aria-hidden="true"></i>
+              <span>Gọi 037.789.4821</span>
+            </a>
             <button class="btn btn-light" type="button" data-delivery-open>
               <i data-lucide="package-check" aria-hidden="true"></i>
               <span>Gửi Hàng Nhanh 200k</span>
             </button>
           </div>
+          <ul class="hero-badges" data-hero>
+            <li><i data-lucide="badge-check" aria-hidden="true"></i>Báo giá rõ ràng</li>
+            <li><i data-lucide="map-pin" aria-hidden="true"></i>Đón tận nơi</li>
+            <li><i data-lucide="clock" aria-hidden="true"></i>Nhận lịch 24/7</li>
+          </ul>
         </div>
 
-        <form class="booking-card" name="dat-xe" data-quote-form>
+        <form class="booking-card" name="dat-xe" data-quote-form data-hero-card>
           <div class="form-title">
             <strong>Đặt xe nhanh</strong>
             <span>Nhập lịch trình rồi gửi qua SMS hoặc Zalo</span>
@@ -174,9 +205,38 @@
       </div>
     </section>
 
+    <div class="marquee" aria-label="Khu vực phục vụ">
+      <div class="marquee-track">
+        <ul class="marquee-group">
+          <li><i data-lucide="map-pin" aria-hidden="true"></i>Nông Cống</li>
+          <li><i data-lucide="map-pin" aria-hidden="true"></i>TP. Thanh Hóa</li>
+          <li><i data-lucide="map-pin" aria-hidden="true"></i>Hà Nội</li>
+          <li><i data-lucide="map-pin" aria-hidden="true"></i>Sầm Sơn</li>
+          <li><i data-lucide="map-pin" aria-hidden="true"></i>Hà Nam</li>
+          <li><i data-lucide="map-pin" aria-hidden="true"></i>Nam Định</li>
+          <li><i data-lucide="map-pin" aria-hidden="true"></i>Hải Phòng</li>
+          <li><i data-lucide="map-pin" aria-hidden="true"></i>Pù Luông</li>
+          <li><i data-lucide="map-pin" aria-hidden="true"></i>Lam Kinh</li>
+          <li><i data-lucide="map-pin" aria-hidden="true"></i>Hải Tiến</li>
+        </ul>
+        <ul class="marquee-group" aria-hidden="true">
+          <li><i data-lucide="map-pin" aria-hidden="true"></i>Nông Cống</li>
+          <li><i data-lucide="map-pin" aria-hidden="true"></i>TP. Thanh Hóa</li>
+          <li><i data-lucide="map-pin" aria-hidden="true"></i>Hà Nội</li>
+          <li><i data-lucide="map-pin" aria-hidden="true"></i>Sầm Sơn</li>
+          <li><i data-lucide="map-pin" aria-hidden="true"></i>Hà Nam</li>
+          <li><i data-lucide="map-pin" aria-hidden="true"></i>Nam Định</li>
+          <li><i data-lucide="map-pin" aria-hidden="true"></i>Hải Phòng</li>
+          <li><i data-lucide="map-pin" aria-hidden="true"></i>Pù Luông</li>
+          <li><i data-lucide="map-pin" aria-hidden="true"></i>Lam Kinh</li>
+          <li><i data-lucide="map-pin" aria-hidden="true"></i>Hải Tiến</li>
+        </ul>
+      </div>
+    </div>
+
     <section class="price-section" id="bang-gia">
       <div class="container">
-        <div class="section-head centered">
+        <div class="section-head centered" data-reveal>
           <p class="section-kicker">Bảng giá tham khảo</p>
           <h2 data-fare-heading>Dịch vụ xe ghép Thanh Hóa đi các tuyến</h2>
           <p class="section-note">
@@ -184,7 +244,7 @@
             Vui lòng gọi hotline để chốt giá chính xác trước khi khởi hành.
           </p>
         </div>
-        <div class="fare-grid">
+        <div class="fare-grid" data-reveal-stagger>
           <article class="fare-card" data-route="Thanh Hóa - Hà Nội" data-destination="Hà Nội">
             <div class="fare-image fare-thanh-hoa" aria-hidden="true"></div>
             <div class="fare-body">
@@ -401,20 +461,24 @@
     </section>
 
     <section class="quick-strip">
-      <div class="container strip-grid">
+      <div class="container strip-grid" data-reveal-stagger>
         <div>
+          <span class="strip-icon"><i data-lucide="clock" aria-hidden="true"></i></span>
           <strong>24/7</strong>
           <span>Nhận lịch linh hoạt</span>
         </div>
         <div>
+          <span class="strip-icon"><i data-lucide="wallet" aria-hidden="true"></i></span>
           <strong>Rõ giá</strong>
           <span>Báo trước khi đi</span>
         </div>
         <div>
+          <span class="strip-icon"><i data-lucide="map-pin" aria-hidden="true"></i></span>
           <strong>Đón tận nơi</strong>
           <span>Phù hợp từng tuyến</span>
         </div>
         <div>
+          <span class="strip-icon"><i data-lucide="sparkles" aria-hidden="true"></i></span>
           <strong>Xe sạch</strong>
           <span>Đi xa thoải mái</span>
         </div>
@@ -423,31 +487,31 @@
 
     <section class="services" id="dich-vu">
       <div class="container">
-        <div class="section-head centered">
+        <div class="section-head centered" data-reveal>
           <p class="section-kicker">Dịch vụ nổi bật</p>
           <h2>Lựa chọn chuyến xe phù hợp nhu cầu</h2>
         </div>
-        <div class="service-grid">
+        <div class="service-grid" data-reveal-stagger>
           <article class="service-card">
-            <div class="service-icon">01</div>
+            <div class="service-icon"><i data-lucide="users" aria-hidden="true"></i></div>
             <h3>Xe ghép liên tỉnh</h3>
             <p>Ghép khách cùng tuyến, tiết kiệm chi phí, phù hợp khách đi một mình hoặc nhóm nhỏ.</p>
             <a href="tel:0378104668">Tư vấn tuyến</a>
           </article>
           <article class="service-card">
-            <div class="service-icon">02</div>
+            <div class="service-icon"><i data-lucide="car-front" aria-hidden="true"></i></div>
             <h3>Xe tiện chuyến</h3>
             <p>Tận dụng xe chiều về hoặc xe trống lịch để có giá tốt cho các chuyến đã xác định sẵn.</p>
             <a href="tel:0378104668">Kiểm tra xe</a>
           </article>
           <article class="service-card">
-            <div class="service-icon">03</div>
+            <div class="service-icon"><i data-lucide="plane" aria-hidden="true"></i></div>
             <h3>Đưa đón sân bay</h3>
             <p>Canh giờ bay, hỗ trợ hành lý, phù hợp khách cá nhân, gia đình và đối tác công ty.</p>
             <a href="tel:0377894821">Đặt lịch đón</a>
           </article>
           <article class="service-card">
-            <div class="service-icon">04</div>
+            <div class="service-icon"><i data-lucide="briefcase" aria-hidden="true"></i></div>
             <h3>Xe hợp đồng</h3>
             <p>Thuê xe riêng theo ngày, theo tuyến hoặc theo lịch trình công tác, du lịch, sự kiện.</p>
             <a href="tel:0377894821">Nhận báo giá</a>
@@ -460,14 +524,14 @@
 
     <section class="packages">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head" data-reveal>
           <div>
             <p class="section-kicker">Gói dịch vụ</p>
             <h2>Phù hợp khách cá nhân và doanh nghiệp</h2>
           </div>
           <a class="btn btn-outline" href="tel:0378104668">Gọi tư vấn</a>
         </div>
-        <div class="package-grid">
+        <div class="package-grid" data-reveal-stagger>
           <article class="package-card">
             <h3>Đi ghép tiết kiệm</h3>
             <p>Dành cho khách muốn tối ưu chi phí và linh hoạt điểm đón trả theo tuyến.</p>
@@ -501,11 +565,11 @@
 
     <section class="process" id="quy-trinh">
       <div class="container process-grid">
-        <div>
+        <div class="process-intro" data-reveal>
           <p class="section-kicker">Quy trình đặt xe</p>
           <h2>4 bước đơn giản để có chuyến đi phù hợp</h2>
         </div>
-        <ol class="steps">
+        <ol class="steps" data-reveal-stagger>
           <li>
             <span>1</span>
             <strong>Gửi lịch trình</strong>
@@ -532,25 +596,37 @@
 
     <section class="reviews">
       <div class="container">
-        <div class="section-head centered">
+        <div class="section-head centered" data-reveal>
           <p class="section-kicker">Khách hàng nói gì</p>
           <h2>Dịch vụ rõ ràng, dễ đặt, đúng giờ</h2>
         </div>
-        <div class="review-grid">
+        <div class="review-grid" data-reveal-stagger>
           <article>
+            <div class="review-stars" aria-label="5 trên 5 sao">★★★★★</div>
             <p>“Mình đặt xe đi tỉnh trong ngày, tài xế gọi xác nhận trước và đến đúng giờ. Giá báo rõ ngay từ đầu.”</p>
-            <strong>★★★★★ - Anh Minh</strong>
+            <div class="review-author">
+              <span class="review-avatar" aria-hidden="true">M</span>
+              <strong>Anh Minh</strong>
+            </div>
           </article>
           <article>
+            <div class="review-stars" aria-label="5 trên 5 sao">★★★★★</div>
             <p>“Gia đình có hành lý nhiều nên được tư vấn xe rộng. Chuyến đi êm, tài xế hỗ trợ nhiệt tình.”</p>
-            <strong>★★★★★ - Chị Hương</strong>
+            <div class="review-author">
+              <span class="review-avatar" aria-hidden="true">H</span>
+              <strong>Chị Hương</strong>
+            </div>
           </article>
           <article>
+            <div class="review-stars" aria-label="5 trên 5 sao">★★★★★</div>
             <p>“Cần xe tiện chuyến gấp, gọi hotline là có phương án nhanh. Rất tiện khi không muốn tự lái.”</p>
-            <strong>★★★★★ - Anh Tuấn</strong>
+            <div class="review-author">
+              <span class="review-avatar" aria-hidden="true">T</span>
+              <strong>Anh Tuấn</strong>
+            </div>
           </article>
         </div>
-        <form class="review-form" data-review-form>
+        <form class="review-form" data-review-form data-reveal>
           <div class="form-title">
             <strong>Gửi đánh giá của bạn</strong>
           </div>
@@ -584,7 +660,7 @@
 
     <section class="seo-section">
       <div class="container seo-grid">
-        <div>
+        <div data-reveal>
           <p class="section-kicker">Khu vực phục vụ</p>
           <h2>Xe ghép Nông Cống, Thanh Hóa đi Hà Nội hằng ngày</h2>
           <p>
@@ -599,7 +675,7 @@
             Hotline hỗ trợ tư vấn giá, giờ đón và phương án xe trước khi khởi hành.
           </p>
         </div>
-        <div class="seo-card">
+        <div class="seo-card" data-reveal>
           <h3>Tuyến tìm kiếm phổ biến</h3>
           <ul>
             <li><a href="/xe-ghep-nong-cong-ha-noi.html">Xe ghép Nông Cống đi Hà Nội</a></li>
@@ -614,14 +690,20 @@
     </section>
 
     <section class="contact" id="lien-he">
-      <div class="container contact-box">
+      <div class="container contact-box" data-reveal>
         <div>
           <p class="section-kicker">Liên hệ đặt xe</p>
           <h2>Cần xe hôm nay? Gọi ngay để được báo tuyến.</h2>
         </div>
         <div class="contact-actions">
-          <a class="btn btn-primary" href="tel:0378104668">0378.104.668</a>
-          <a class="btn btn-dark" href="tel:0377894821">037.789.4821</a>
+          <a class="btn btn-primary" href="tel:0378104668">
+            <i data-lucide="phone" aria-hidden="true"></i>
+            <span>0378.104.668</span>
+          </a>
+          <a class="btn btn-dark" href="tel:0377894821">
+            <i data-lucide="phone" aria-hidden="true"></i>
+            <span>037.789.4821</span>
+          </a>
         </div>
       </div>
     </section>
@@ -643,20 +725,31 @@
         <a href="#dich-vu">Xe hợp đồng</a>
       </div>
       <div>
+        <h3>Tuyến xe</h3>
+        <a href="/xe-ghep-nong-cong-ha-noi.html">Nông Cống đi Hà Nội</a>
+        <a href="/xe-ghep-ha-noi-nong-cong.html">Hà Nội về Nông Cống</a>
+        <a href="/xe-ghep-thanh-hoa-ha-noi.html">Thanh Hóa - Hà Nội</a>
+        <a href="/gui-hang-nong-cong-ha-noi.html">Gửi hàng Nông Cống - Hà Nội</a>
+      </div>
+      <div>
         <h3>Hotline</h3>
         <a href="tel:0378104668">0378.104.668</a>
         <a href="tel:0377894821">037.789.4821</a>
       </div>
     </div>
+    <div class="container footer-bottom">
+      <p>© <span data-year>2026</span> Nhà Xe Hạnh Phúc. Xe ghép Nông Cống - Thanh Hóa - Hà Nội.</p>
+      <a href="#home">Lên đầu trang ↑</a>
+    </div>
   </footer>
 
   <div class="mobile-cta" aria-label="Liên hệ nhanh">
-    <a href="tel:0378104668">Gọi ngay</a>
-    <a href="sms:0377894821">Nhắn tin</a>
+    <a href="tel:0378104668"><i data-lucide="phone" aria-hidden="true"></i><span>Gọi ngay</span></a>
+    <a href="sms:0377894821"><i data-lucide="message-square" aria-hidden="true"></i><span>Nhắn tin</span></a>
   </div>
 
   <div class="modal-backdrop" data-delivery-modal aria-hidden="true">
-    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="delivery-title">
+    <div class="modal-panel" data-lenis-prevent role="dialog" aria-modal="true" aria-labelledby="delivery-title">
       <button class="modal-close" type="button" data-delivery-close aria-label="Đóng form giao hàng">
         <i data-lucide="x" aria-hidden="true"></i>
       </button>
@@ -714,8 +807,19 @@
     </div>
   </div>
 
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <button class="back-to-top" type="button" data-back-to-top aria-label="Lên đầu trang">
+    <svg class="back-to-top-ring" viewBox="0 0 48 48" aria-hidden="true">
+      <circle cx="24" cy="24" r="22" pathLength="100" data-back-to-top-ring />
+    </svg>
+    <i data-lucide="arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
   <script src="script.js"></script>
+  <script src="motion.js" defer></script>
 </body>
 
 </html>

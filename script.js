@@ -30,6 +30,10 @@ if (window.lucide) {
   window.lucide.createIcons();
 }
 
+document.querySelectorAll("[data-year]").forEach((el) => {
+  el.textContent = String(new Date().getFullYear());
+});
+
 const buildQuoteMessage = () => {
   const data = new FormData(quoteForm);
   return [
@@ -231,8 +235,19 @@ reviewForm?.addEventListener("submit", (event) => {
   }
 
   const article = document.createElement("article");
-  const stars = "★".repeat(Number(rating)) + "☆".repeat(5 - Number(rating));
-  article.innerHTML = `<p>“${content}”</p><strong>${stars} - ${name}</strong>`;
+  article.className = "is-new";
+  const starCount = Math.min(Math.max(Number(rating) || 5, 1), 5);
+  article.innerHTML = `
+    <div class="review-stars"></div>
+    <p></p>
+    <div class="review-author"><span class="review-avatar" aria-hidden="true"></span><strong></strong></div>`;
+  // Dùng textContent để nội dung người dùng nhập không bị hiểu là HTML
+  const starsEl = article.querySelector(".review-stars");
+  starsEl.textContent = "★".repeat(starCount) + "☆".repeat(5 - starCount);
+  starsEl.setAttribute("aria-label", `${starCount} trên 5 sao`);
+  article.querySelector("p").textContent = `“${content}”`;
+  article.querySelector(".review-avatar").textContent = name.split(/\s+/).pop().charAt(0).toUpperCase();
+  article.querySelector("strong").textContent = name;
   reviewGrid?.prepend(article);
 
   reviewStatus.className = "form-status is-success";
